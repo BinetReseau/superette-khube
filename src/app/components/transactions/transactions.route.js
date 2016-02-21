@@ -17,7 +17,10 @@ function TransactionsRouter($stateProvider, $urlRouterProvider) {
                 templateUrl: "app/components/transactions/home.html",
                 controller: 'TransactionsHomeController',
                 controllerAs: 'TransHomeCtl',
-
+                resolve: {
+                        transactions: function(Transaction) {
+                            return Transaction.findAll();
+                        }
                 }
             })
     ;
