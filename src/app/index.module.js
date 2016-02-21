@@ -10,8 +10,8 @@
         'js-data',
         'ui.router',
 
-        'platalbankKhube.home'
-
+        'platalbankKhube.home',
+        'platalbankKhube.transactions',
         ]);
 
 })();
