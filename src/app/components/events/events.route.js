@@ -17,6 +17,10 @@ function EventsRouter($stateProvider, $urlRouterProvider) {
                 templateUrl: "app/components/events/home.html",
                 controller: 'EventsHomeController',
                 controllerAs: 'EvHomeCtl',
+                resolve: {
+                        events: function(Event) {
+                            return Event.findAll();
+                        }
                 }
             })
     ;
