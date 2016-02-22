@@ -3,6 +3,7 @@
 
     angular.module('platalbankKhube.transactions')
         .directive('transactionShort', transactionShort)
+        .directive('transactionDetailed', transactionDetailed)
     ;
 
     /** @ngInject */
@@ -16,5 +17,15 @@
         };
     }
 
+    /** @ngInject */
+    function transactionDetailed() {
+        return {
+            restrict: 'E',
+            scope: {
+                transaction: '=transaction',
+            },
+            templateUrl: 'app/components/transactions/directive.html'
+        };
+    }
 
 })();
