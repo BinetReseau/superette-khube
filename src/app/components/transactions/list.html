@@ -1,0 +1,7 @@
+<p>This should list the transactions of a particular event : <event-short event="TrListCtl.the_event"></event-short></p>
+
+<ul>
+    <li ng-repeat="transaction in TrListCtl.transactions">
+        <a ui-sref="index.transactions.details({id: transaction.id})"><transaction-short transaction="transaction"></transaction-short></a>
+    </li>
+</ul>

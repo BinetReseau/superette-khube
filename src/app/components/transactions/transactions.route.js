@@ -34,6 +34,22 @@ function TransactionsRouter($stateProvider, $urlRouterProvider) {
                         }
                 }
             })
+            .state('index.transactions.list', {
+                url: "/event/:event_id",
+                templateUrl: "app/components/transactions/list.html",
+                controller: 'TransactionsListController',
+                controllerAs: 'TrListCtl',
+                resolve: {
+                    the_event: function(Event, $stateParams) {
+                        return Event.find($stateParams.event_id);
+                    },
+                    transactions: function(Transaction, $stateParams) {
+                        return Transaction.findAll({}, {suffix: '?event=' + $stateParams.event_id});
+                    }
+                }
+            })
+
+
     ;
 }
 })();
