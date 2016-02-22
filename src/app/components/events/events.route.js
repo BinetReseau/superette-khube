@@ -23,6 +23,18 @@ function EventsRouter($stateProvider, $urlRouterProvider) {
                         }
                 }
             })
+            .state('index.events.details', {
+                url: "/:id",
+                templateUrl: "app/components/events/details.html",
+                controller: "EventsDetailController",
+                controllerAs: "EvDetailCtl",
+                resolve: {
+                    event: function(Event, $stateParams) {
+                        return Event.find($stateParams.id);
+                    }
+                }
+
+            })
     ;
 }
 })();
