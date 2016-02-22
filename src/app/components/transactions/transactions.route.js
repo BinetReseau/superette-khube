@@ -48,7 +48,17 @@ function TransactionsRouter($stateProvider, $urlRouterProvider) {
                     }
                 }
             })
-
+            .state('index.transactions.heavy_make', {
+                url: "/make/:event_id",
+                templateUrl: "app/components/transactions/heavy_make.html",
+                controller: 'TransactionsHeavyMakeController',
+                controllerAs: 'TrHeavyMakeCtl',
+                resolve: {
+                    the_event: function(Event, $stateParams) {
+                        return Event.find($stateParams.event_id);
+                    }
+                }
+            })
 
     ;
 }
