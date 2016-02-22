@@ -1,5 +1,7 @@
 <p>This should display some accounts</p>
 
 <ul>
-    <li ng-repeat="account in AccHomeCtl.accounts">{{account.short_name}}</li>
+    <li ng-repeat="account in AccHomeCtl.accounts">
+        <account-short account="account"></account-short>
+    </li>
 </ul>
