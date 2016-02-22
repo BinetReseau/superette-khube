@@ -2,6 +2,6 @@
 
 <ul>
     <li ng-repeat="transaction in TransHomeCtl.transactions">
-        <transaction-short transaction="transaction"></transaction-short>
+        <a ui-sref="index.transactions.details({id: transaction.id})"><transaction-short transaction="transaction"></transaction-short></a>
     </li>
 </ul>
