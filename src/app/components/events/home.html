@@ -2,6 +2,6 @@
 
 <ul>
     <li ng-repeat="event in EvHomeCtl.events">
-        <event-short event="event"></event-short>
+        <a ui-sref="index.events.details({id: event.id})"> <event-short event="event"></event-short></a>
     </li>
 </ul>
