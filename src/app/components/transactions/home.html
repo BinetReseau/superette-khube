@@ -1,5 +1,7 @@
 <p>This should display some transactions.</p>
 
 <ul>
-    <li ng-repeat="transaction in TransHomeCtl.transactions">{{transaction.amount}}</li>
+    <li ng-repeat="transaction in TransHomeCtl.transactions">
+        <a ui-sref="index.transactions.details({id: transaction.id})"><transaction-short transaction="transaction"></transaction-short></a>
+    </li>
 </ul>

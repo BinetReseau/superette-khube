@@ -23,6 +23,17 @@ function TransactionsRouter($stateProvider, $urlRouterProvider) {
                         }
                 }
             })
+            .state('index.transactions.details', {
+                url: "/:id",
+                templateUrl: "app/components/transactions/details.html",
+                controller: 'TransactionsDetailController',
+                controllerAs: 'TrDetailCtl',
+                resolve: {
+                        transaction: function(Transaction, $stateParams) {
+                            return Transaction.find($stateParams.id);
+                        }
+                }
+            })
     ;
 }
 })();
