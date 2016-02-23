@@ -1,5 +1,7 @@
 <p>This should display some events</p>
 
 <ul>
-    <li ng-repeat="event in EvHomeCtl.events">{{event.label}}</li>
+    <li ng-repeat="event in EvHomeCtl.events">
+        <a ui-sref="index.events.details({id: event.id})"> <event-short event="event"></event-short></a>
+    </li>
 </ul>
