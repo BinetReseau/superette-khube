@@ -1,9 +1,11 @@
-<p>This should list the transactions of a particular event : <event-short event="TransListCtl.the_event"></event-short></p>
+<p>This should list the transactions of a particular event : <event-short event="TransListCtl.the_event" /></p>
 
 <ul>
     <li ng-repeat="transaction in TransListCtl.transactions">
-        <a ui-sref="index.transactions.details({id: transaction.id})"><transaction-short transaction="transaction"></transaction-short></a>
+        <a ui-sref="index.transactions.details({ id: transaction.id })">
+            <transaction-short transaction="transaction" />
+        </a>
     </li>
 </ul>
 
-<a ui-sref="index.transactions.heavy_make({event_id: TransListCtl.the_event.id})">Add a transaction</a>
+<a ui-sref="index.transactions.heavy_make({ event_id: TransListCtl.the_event.id })">Add a transaction</a>
