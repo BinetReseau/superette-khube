@@ -3,7 +3,8 @@
 
     angular
         .module('platalbankKhube.accounts')
-        .factory('Account', Account);
+        .factory('Account', Account)
+    ;
 
     /** @ngInject */
     function Account(DS) {
