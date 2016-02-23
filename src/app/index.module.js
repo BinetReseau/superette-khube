@@ -12,6 +12,7 @@
 
         'platalbankKhube.home',
         'platalbankKhube.transactions',
+        'platalbankKhube.accounts',
         ]);
 
 })();
