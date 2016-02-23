@@ -3,7 +3,8 @@
 
     angular
         .module('platalbankKhube.events')
-        .factory('Event', Event);
+        .factory('Event', Event)
+    ;
 
     /** @ngInject */
     function Event(DS) {

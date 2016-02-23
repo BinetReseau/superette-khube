@@ -4,7 +4,8 @@
     angular
         .module('platalbankKhube.events')
         .controller('EventsHomeController', EventsHomeController)
-        .controller('EventsDetailController', EventsDetailController);
+        .controller('EventsDetailController', EventsDetailController)
+    ;
 
     /** @ngInject */
     function EventsHomeController(Event, events, $log) {
@@ -13,11 +14,10 @@
         vm.events = events;
     }
 
-        /** @ngInject */
+    /** @ngInject */
     function EventsDetailController(Event, event, $log) {
         var vm = this;
-        
+
         vm.event = event;
     }
-
 })();
