@@ -29,7 +29,7 @@
                 url: "/:id",
                 templateUrl: "app/components/transactions/details.html",
                 controller: 'TransactionsDetailController',
-                controllerAs: 'TrDetailCtl',
+                controllerAs: 'TransDetailCtl',
                 resolve: {
                     transaction: function(Transaction, $stateParams) {
                         return Transaction.find($stateParams.id);
@@ -40,7 +40,7 @@
                 url: "/event/:event_id",
                 templateUrl: "app/components/transactions/list.html",
                 controller: 'TransactionsListController',
-                controllerAs: 'TrListCtl',
+                controllerAs: 'TransListCtl',
                 resolve: {
                     the_event: function(Event, $stateParams) {
                         return Event.find($stateParams.event_id);
@@ -54,7 +54,7 @@
                 url: "/make/:event_id",
                 templateUrl: "app/components/transactions/heavy_make.html",
                 controller: 'TransactionsHeavyMakeController',
-                controllerAs: 'TrHeavyMakeCtl',
+                controllerAs: 'TransHeavyMakeCtl',
                 resolve: {
                     the_event: function(Event, $stateParams) {
                         return Event.find($stateParams.event_id);
