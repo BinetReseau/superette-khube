@@ -44,7 +44,7 @@ function TransactionsRouter($stateProvider, $urlRouterProvider) {
                         return Event.find($stateParams.event_id);
                     },
                     transactions: function(Transaction, $stateParams) {
-                        return Transaction.findAll({}, {suffix: '?event=' + $stateParams.event_id});
+                        return Transaction.findAll({event: $stateParams.event_id});
                     }
                 }
             })
