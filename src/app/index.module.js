@@ -13,6 +13,7 @@
         'platalbankKhube.home',
         'platalbankKhube.transactions',
         'platalbankKhube.accounts',
+        'platalbankKhube.events',
         ]);
 
 })();
