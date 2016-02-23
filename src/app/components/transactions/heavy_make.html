@@ -1,0 +1,47 @@
+<p>This should create a transaction into the event : <event-short event="TrHeavyMakeCtl.the_event"></event-short></p>
+
+
+<form ng-submit="TrHeavyMakeCtl.saveTransaction(TrHeavyMakeCtl.transaction)">
+    <div class="form-group">
+        <label for="tState">State</label>
+        <div>
+            <select id="tState" ng-options="s for s in ['P', 'A', 'R', 'X', 'C']" ng-model="TrHeavyMakeCtl.transaction.state">
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="tAmount">Amount</label>
+        <div>
+            <input id="tAmout" type="number" ng-model="TrHeavyMakeCtl.transaction.amount" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="tLabel">Label</label>
+        <div>
+            <input id="tLabel" type="text" ng-model="TrHeavyMakeCtl.transaction.label" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="tCAccount">Credited account</label>
+        <div>
+            <input disabled id="tCAccount" type="text" ng-model="TrHeavyMakeCtl.cAccount.short_name" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="tDAccount">Debited account</label>
+        <div>
+            <input disabled id="tDAccount" type="text" ng-model="TrHeavyMakeCtl.dAccount.short_name" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div>
+            <input type="submit" value="Soumettre la transaction" />
+        </div>
+    </div>
+</form>
