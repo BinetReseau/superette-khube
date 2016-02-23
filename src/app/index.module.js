@@ -2,18 +2,18 @@
     'use strict';
 
     angular
-    .module('platalbankKhube',
-        ['ngAnimate',
-        'ngCookies',
-        'ngTouch',
-        'ngSanitize',
-        'js-data',
-        'ui.router',
+        .module('platalbankKhube', [
+            'ngAnimate',
+            'ngCookies',
+            'ngTouch',
+            'ngSanitize',
+            'js-data',
+            'ui.router',
 
-        'platalbankKhube.home',
-        'platalbankKhube.transactions',
-        'platalbankKhube.accounts',
-        'platalbankKhube.events',
-        ]);
-
+            'platalbankKhube.home',
+            'platalbankKhube.transactions',
+            'platalbankKhube.accounts',
+            'platalbankKhube.events',
+        ])
+    ;
 })();

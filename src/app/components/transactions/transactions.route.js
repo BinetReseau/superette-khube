@@ -1,26 +1,28 @@
 (function() {
     'use strict';
 
-    angular.module('platalbankKhube.transactions')
-        .config(TransactionsRouter);
+    angular
+        .module('platalbankKhube.transactions')
+        .config(TransactionsRouter)
+    ;
 
     /** @ngInject */
-function TransactionsRouter($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when('/transactions', '/transactions/');
-    $stateProvider
-        .state('index.transactions', {
-            url: "transactions",
-            template: "<ui-view />"
-        })
+    function TransactionsRouter($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.when('/transactions', '/transactions/');
+        $stateProvider
+            .state('index.transactions', {
+                url: "transactions",
+                template: "<ui-view />"
+            })
             .state('index.transactions.home', {
                 url: "/",
                 templateUrl: "app/components/transactions/home.html",
                 controller: 'TransactionsHomeController',
                 controllerAs: 'TransHomeCtl',
                 resolve: {
-                        transactions: function(Transaction) {
-                            return Transaction.findAll();
-                        }
+                    transactions: function(Transaction) {
+                        return Transaction.findAll();
+                    }
                 }
             })
             .state('index.transactions.details', {
@@ -29,9 +31,9 @@ function TransactionsRouter($stateProvider, $urlRouterProvider) {
                 controller: 'TransactionsDetailController',
                 controllerAs: 'TrDetailCtl',
                 resolve: {
-                        transaction: function(Transaction, $stateParams) {
-                            return Transaction.find($stateParams.id);
-                        }
+                    transaction: function(Transaction, $stateParams) {
+                        return Transaction.find($stateParams.id);
+                    }
                 }
             })
             .state('index.transactions.list', {
@@ -59,7 +61,6 @@ function TransactionsRouter($stateProvider, $urlRouterProvider) {
                     }
                 }
             })
-
-    ;
-}
+        ;
+    }
 })();
