@@ -12,7 +12,7 @@
         $stateProvider
             .state('index.transactions', {
                 url: "transactions",
-                template: "<ui-view />"
+                template: "<ui-view></ui-view>"
             })
             .state('index.transactions.home', {
                 url: "/",
