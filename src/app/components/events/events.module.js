@@ -2,5 +2,6 @@
     'use strict';
 
     angular
-        .module('platalbankKhube.events', ['js-data']);
+        .module('platalbankKhube.events', ['js-data'])
+    ;
 })();

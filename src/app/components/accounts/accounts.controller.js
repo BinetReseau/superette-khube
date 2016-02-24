@@ -3,7 +3,8 @@
 
     angular
         .module('platalbankKhube.accounts')
-        .controller('AccountsHomeController', AccountsHomeController);
+        .controller('AccountsHomeController', AccountsHomeController)
+    ;
 
     /** @ngInject */
     function AccountsHomeController(Account, accounts, $log) {

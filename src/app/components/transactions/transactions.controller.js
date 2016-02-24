@@ -48,7 +48,7 @@
 
         vm.saveTransaction = function(transaction) {
             Transaction.create(transaction).then(function() {
-            $log.debug('Transaction ajoutée avec succès.');
+                $log.debug('Transaction ajoutée avec succès.');
             }, function(e) {
                 $log.error(e);
             });

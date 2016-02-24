@@ -1,7 +1,8 @@
 (function() {
     'use strict';
 
-    angular.module('platalbankKhube.accounts')
+    angular
+        .module('platalbankKhube.accounts')
         .directive('accountShort', accountShort)
     ;
 
