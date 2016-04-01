@@ -20,6 +20,14 @@
         var vm = this;
 
         vm.transaction = transaction;
+
+        vm.cancelTransaction = function(transaction) {
+            transaction.state = 'X';
+            transaction.credited_account = transaction.credited_account.url;
+            transaction.debited_account = transaction.debited_account.url;
+            transaction.event = transaction.event.url;
+            Transaction.save(transaction);
+        }
     }
 
     function TransactionsListController(Transaction, transactions, Event, the_event, $log) {
