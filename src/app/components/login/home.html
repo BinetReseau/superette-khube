@@ -1,0 +1,13 @@
+<div>
+	This should be the login page
+	<form name="loginForm" ng-submit="LoginCtl.connexion(LoginCtl.credentials)">
+		<alert ng-repeat="alert in LoginCtl.alerts" type="{{ alert.type }}" close="LoginCtl.closeAlert($index)">{{ alert.msg }}</alert>
+		<div class="form-group">
+            User:<input type="text" id="usernameInput" name="user" ng-model="LoginCtl.credentials.username"/>
+            Password:<input type="password" name="password" ng-model="LoginCtl.credentials.password"/>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Login" />
+        </div>
+    </form>
+</div>

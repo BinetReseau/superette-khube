@@ -7,9 +7,11 @@
     ;
 
     /** @ngInject */
-    function config($logProvider, DSProvider, DSHttpAdapterProvider) {
+    function config($logProvider, $httpProvider, DSProvider, DSHttpAdapterProvider) {
         // Enable log
         $logProvider.debugEnabled(true);
+
+        $httpProvider.interceptors.push('AuthInterceptor');
 
         angular.extend(DSProvider.defaults, {
             useFilter: true

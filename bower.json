@@ -12,7 +12,9 @@
     "animate.css": "~3.3.0",
     "angular": "~1.4.0",
     "js-data": "~2.0.0",
-    "js-data-angular": "~3.0.0"
+    "js-data-angular": "~3.0.0",
+    "ngstorage":"*",
+    "lodash": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"
