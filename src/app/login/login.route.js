@@ -2,15 +2,17 @@
     'use strict';
 
     angular
-    .module('platalbankKhube')
-    .config(loginrouter);
+        .module('platalbankKhube.auth')
+        .config(loginRouter);
 
     /** @ngInject */
-    function loginrouter($stateProvider, $urlRouterProvider) {
+    function loginRouter($stateProvider) {
         $stateProvider
             .state('login',{
                 url: "/login",
-                templateUrl: "app/login/home.html"
+                templateUrl: "app/login/home.html",
+                controller: "LoginController",
+                controllerAs: "LoginCtl"
             });
     }
 })();
