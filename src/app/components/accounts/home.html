@@ -2,6 +2,17 @@
 
 <input type="text" ng-model="query" />
 
+<form class="navbar-form">
+    <input type="search" class="form-control" ng-model="query" id="magic" autocomplete="off"
+        placeholder="Nom ou montant"
+        style="width: 100%;"
+        ng-keypress="convertBarcode($event)"
+        typeahead="'' as el for el in analyse($viewValue) | orderBy:urank | limitTo:7"
+        typeahead-template-url="components/magicbar/typeahead.html"
+        typeahead-on-select="executeQuery($item, $model, $label)" />
+</form>
+
+
 <ul>
     <li ng-repeat="account in AccHomeCtl.accounts | filter:query">
         <account-short account="account"></account-short>

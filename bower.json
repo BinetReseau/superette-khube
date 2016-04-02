@@ -14,10 +14,24 @@
     "js-data": "~2.0.0",
     "js-data-angular": "~3.0.0",
     "ngstorage":"*",
-    "lodash": "*"
+    "lodash": "*",
+    "bootstrap": "*",
+    "angular-bootstrap" : "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/fonts/glyphicons-halflings-regular.eot",
+        "dist/fonts/glyphicons-halflings-regular.svg",
+        "dist/fonts/glyphicons-halflings-regular.ttf",
+        "dist/fonts/glyphicons-halflings-regular.woff",
+        "dist/fonts/glyphicons-halflings-regular.woff2"
+      ]
+    }
   },
   "resolutions": {
     "jquery": "~2.1.4",
