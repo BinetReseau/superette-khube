@@ -20,9 +20,9 @@
                     }
                 }
             })
-                .state('index.notfound', {
-                    url: "/404",
-                    templateUrl: "app/main/404.html"
-                });
+            .state('index.notfound', {
+                url: "/404",
+                templateUrl: "app/main/404.html"
+            });
     }
 })();
