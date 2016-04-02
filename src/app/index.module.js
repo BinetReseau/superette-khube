@@ -14,7 +14,7 @@
             'platalbankKhube.transactions',
             'platalbankKhube.accounts',
             'platalbankKhube.events',
-            //'platalbankKhube.users',
+            'platalbankKhube.users',
             'platalbankKhube.auth',
         ])
     ;

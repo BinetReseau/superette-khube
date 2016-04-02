@@ -6,10 +6,7 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController() {
-    	var vm = this;
-    }
-    /*function LoginController($state, AuthService, $timeout, $modalInstance) {
+    function LoginController($state, AuthService, $timeout) {
     	var vm = this;
 
     	$timeout(function () {
@@ -29,7 +26,7 @@
                 function(user) {
                     vm.login = {username: '', password: ''};
                     vm.inLogin = false;
-                    $modalInstance.close(user);
+                    console.log("User is connected");
                 }, function() {
                     vm.loginError = true;
                     vm.alerts.push({type: 'danger', msg: 'Échec de l\'authentification.'});
@@ -38,7 +35,7 @@
                 }
             );
         };
-    	
-    }*/
+
+    }
 
 })();
