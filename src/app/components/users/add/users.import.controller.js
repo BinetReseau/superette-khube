@@ -7,11 +7,15 @@
     ;
 
     /** @ngInject */
-    function UserImportController(User, FrankizUser, frankiz_users) {
+    function UserImportController(User, FrankizUser, frankiz_users, $uibModalInstance) {
     // function UserImportController(User, FrankizUser) {
         var vm = this;
 
-        vm.frankiz_users = frankiz_users
+        vm.frankiz_users = frankiz_users;
+
+        vm.select = function(user) {
+            $uibModalInstance.close(user);
+        }
     };
 
 })();

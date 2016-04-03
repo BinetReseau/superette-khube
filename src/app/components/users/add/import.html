@@ -1,6 +1,5 @@
 
-<input autofocus="autofocus" autocomplete="off" type="text" class="form-control"
- id="frankiz_query" ng-model="UseImpCtl.query" placeholder="Prénom ou nom"
- data-provide="typeahead" data-source="UseImpCtl.frankiz_users">
-
-<p ng-repeat ="user in UseImpCtl.frankiz_users |filter:UseImpCtl.query |limitTo:10"> {{user.first_name}} {{user.last_name}}</p>
+<input autofocus="autofocus" autocomplete="off" type="text" class="form-control col-md-12"
+ id="frankiz_query" ng-model="UseImpCtl.query" placeholder="prenom.nom"
+ uib-typeahead="user.first_name + ' ' + user.last_name for user in UseImpCtl.frankiz_users | filter:$viewValue | limitTo:7"
+ typeahead-on-select="UseImpCtl.select($item)"/>
