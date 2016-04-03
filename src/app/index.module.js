@@ -9,6 +9,7 @@
             'ngSanitize',
             'js-data',
             'ui.router',
+            'ui.bootstrap',
 
             'platalbankKhube.home',
             'platalbankKhube.transactions',

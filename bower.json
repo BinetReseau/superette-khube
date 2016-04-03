@@ -14,7 +14,9 @@
     "js-data": "~2.0.0",
     "js-data-angular": "~3.0.0",
     "ngstorage":"*",
-    "lodash": "*"
+    "lodash": "*",
+    "bootstrap": "*",
+    "angular-bootstrap" : "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"
