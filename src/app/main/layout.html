@@ -1,2 +1,32 @@
+<nav class="navbar default-color">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class="nav navbar-nav">
+                <li class="active" ng-if="main.isLoggedIn()">
+                    Connecté en tant que {{main.user.username}}
+                </li>
+                <li class="active" ng-if="!main.isLoggedIn()">
+                    <a ui-sref="index.login">Connexion</a>
+                </li>
+                <li class="active" ng-if="main.isLoggedIn()">
+                    <a href="" ng-click="main.logout()">Déconnexion</a>
+                </li>
+                <li class="active" ui-sref-active="active">
+                    <a ui-sref="index.transactions">Transactions</a>
+                </li>
+                <li class="active" ui-sref-active="active">
+                    <a ui-sref="index.accounts">Accounts</a>
+                </li>
+                <li class="active" ui-sref-active="active">
+                    <a ui-sref="index.events">Events</a>
+                </li>
+                <li class="active" ui-sref-active="active">
+                    <a ui-sref="index.users">Users</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <section id="main-content" class="container" ui-view=""></section>
 
