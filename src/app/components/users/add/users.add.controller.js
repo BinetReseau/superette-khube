@@ -52,7 +52,7 @@
                 controllerAs: 'UseImpCtl',
                 resolve: {
                     frankiz_users: function(FrankizUser) {
-                        return FrankizUser.findAll({'page_size': 2000});
+                        return FrankizUser.findAll();
                     }
                 }
             });

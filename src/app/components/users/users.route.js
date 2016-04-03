@@ -21,7 +21,7 @@
                 controllerAs: 'UseHomeCtl',
                 resolve: {
                     users: function(User) {
-                        return User.findAll({'page_size': 2000});
+                        return User.findAll();
                     }
                 }
             })
