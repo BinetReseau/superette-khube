@@ -1,7 +1,64 @@
-<p>This should display some transactions.</p>
+<div class="row col-xs-offset-1 col-xs-10" >
+  <div class="panel panel-default">
+    <h2 class="panel-heading text-center panel-title panel-capitalizefirst"></h2>
+    <table class="table table-hover table-condensed">
+      <tr ng-repeat="transaction in TransHomeCtl.transactions">
+         <transaction-short transaction="transaction"></transaction-short>
+      </tr>
+    </table>
+  </div>
+  <div class="panel panel-default">
+    <h2 class="panel-heading text-center panel-title panel-capitalizefirst">Hier</h2>
+    <table class="table table-hover table-condensed">
+            <tr>
+                <td>Date</td>
+                <td>Dépôt de </td>
+                <td>Montant</td>
+                <td>pour</td>
 
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Dépôt de </td>
+                <td>Montant</td>
+                <td>pour</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Dépôt de </td>
+                <td>Montant</td>
+                <td>pour</td>
+            </tr>
+
+      </table>
+  </div>
+  <div class="panel panel-default">
+    <h2 class="panel-heading text-center panel-title panel-capitalizefirst">Aujourd'hui</h2>
+    <table class="table table-hover table-condensed">
+            <tr>
+                <td>Date</td>
+                <td>Dépôt de </td>
+                <td>Montant</td>
+                <td>pour</td>
+
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Dépôt de </td>
+                <td>Montant</td>
+                <td>pour</td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>Dépôt de </td>
+                <td>Montant</td>
+                <td>pour</td>
+            </tr>
+
+      </table>
+  </div>
+</div>
 <ul>
-    <li ng-repeat="transaction in TransHomeCtl.transactions">
-        <transaction-short transaction="transaction"></transaction-short>
-    </li>
+
 </ul>
+

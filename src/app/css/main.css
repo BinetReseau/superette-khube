@@ -69,3 +69,6 @@ p.time {
 .card-panel {
   font-size: 1em;
 }
+.panel{
+  border-radius: 0px;
+}
