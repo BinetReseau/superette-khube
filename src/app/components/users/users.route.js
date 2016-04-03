@@ -25,6 +25,12 @@
                     }
                 }
             })
+            .state('index.users.add', {
+                url: "/add",
+                templateUrl: "app/components/users/add/add.html",
+                controller: 'UserAddController',
+                controllerAs: 'UseAddCtl',
+            })
         ;
     }
 })();
