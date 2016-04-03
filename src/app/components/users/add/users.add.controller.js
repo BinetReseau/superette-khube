@@ -60,6 +60,7 @@
                 vm.user.username = user.hruid;
                 vm.user.first_name = user.first_name;
                 vm.user.last_name = user.last_name;
+                vm.user.promo = user.promo;
                 vm.user.email = user.email;
             });
         };
