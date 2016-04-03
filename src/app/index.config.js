@@ -21,9 +21,11 @@
             useFilter: true,
             default: true,
             deserialize: function(resourceConfig, data) {
-                return !data ? data :
-                       !('data' in data) ? data :
-                       !('results' in data.data) ? data.data : data.data.results;
+                    var final = !data ? data :
+                                !('data' in data) ? data :
+                                !('results' in data.data) ? data.data : data.data.results;
+                    console.log(final);
+                    return final;
             },
             basePath: 'http://127.0.0.1:8000/api',
             forceTrailingSlash: true

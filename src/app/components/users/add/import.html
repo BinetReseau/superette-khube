@@ -1,0 +1,6 @@
+
+<input autofocus="autofocus" autocomplete="off" type="text" class="form-control"
+ id="frankiz_query" ng-model="UseImpCtl.query" placeholder="Prénom ou nom"
+ data-provide="typeahead" data-source="UseImpCtl.frankiz_users">
+
+<p ng-repeat ="user in UseImpCtl.frankiz_users |filter:UseImpCtl.query |limitTo:10"> {{user.first_name}} {{user.last_name}}</p>

@@ -3,7 +3,9 @@
 
     angular
         .module('platalbankKhube.users')
-        .factory('User', User);
+        .factory('User', User)
+        .factory('FrankizUser', FrankizUser)
+    ;
 
     /** @ngInject */
     function User(DS) {
@@ -15,5 +17,9 @@
                 }
             }
         });
-    }
+    };
+    function FrankizUser(DS) {
+        return DS.defineResource('frankiz_user');
+    };
+
 })();

@@ -21,7 +21,7 @@
                 controllerAs: 'AccHomeCtl',
                 resolve: {
                     accounts: function(Account) {
-                        return Account.findAll({page_size:2000});
+                        return Account.findAll();
                     }
                 }
             })

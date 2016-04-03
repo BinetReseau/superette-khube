@@ -21,9 +21,15 @@
                 controllerAs: 'UseHomeCtl',
                 resolve: {
                     users: function(User) {
-                        return User.findAll({'page_size': 2000});
+                        return User.findAll();
                     }
                 }
+            })
+            .state('index.users.add', {
+                url: "/add",
+                templateUrl: "app/components/users/add/add.html",
+                controller: 'UserAddController',
+                controllerAs: 'UseAddCtl'
             })
         ;
     }
