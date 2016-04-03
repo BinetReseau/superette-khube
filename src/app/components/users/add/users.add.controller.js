@@ -7,7 +7,7 @@
     ;
 
     /** @ngInject */
-    function UserAddController(User, Account, $log) {
+    function UserAddController(User, Account, FrankizUser, $log, $uibModal) {
         var vm = this;
 
         vm.alerts = [];
@@ -44,5 +44,22 @@
             });
         };
 
+
+        vm.importOpen = function() {
+            var modalInstance = $uibModal.open({
+                templateUrl: "app/components/users/add/import.html",
+                controller: 'UserImportController',
+                controllerAs: 'UseImpCtl',
+                resolve: {
+                    frankiz_users: function(FrankizUser) {
+                        return FrankizUser.findAll({'page_size': 2000});
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (user) {
+                vm.user = user;
+            });
+        };
     };
 })();

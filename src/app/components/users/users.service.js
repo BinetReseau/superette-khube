@@ -17,9 +17,9 @@
                 }
             }
         });
-    }
+    };
     function FrankizUser(DS) {
         return DS.defineResource('frankiz_user');
-    }
+    };
 
 })();
