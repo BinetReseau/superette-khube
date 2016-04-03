@@ -2,6 +2,7 @@
   "name": "platalbankKhube",
   "version": "0.0.0",
   "dependencies": {
+    "gulp-uglify": "^1.2.0",
     "lodash": "~3.10.1"
   },
   "scripts": {
@@ -35,6 +36,7 @@
     "gulp-size": "~1.2.1",
     "gulp-sourcemaps": "~1.5.2",
     "gulp-uglify": "~1.2.0",
+    "gulp-cssnano": "*",
     "gulp-useref": "^1.2.0",
     "gulp-util": "~3.0.5",
     "gulp-watch": "~4.2.4",
