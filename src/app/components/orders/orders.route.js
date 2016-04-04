@@ -31,7 +31,7 @@
                     },
                     app_event: function(Event) {
                         return Event.findAll();
-                    }
+                    },
                 }
             })
         ;

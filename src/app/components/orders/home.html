@@ -14,31 +14,25 @@
 
 <div class="row col-xs-offset-1 col-xs-10" >
 
-  <!-- <div class="panel panel-default">
-    <h2 class="panel-heading text-center panel-title panel-capitalizefirst"></h2>
-    <table class="table table-hover table-condensed">
-      <tr ng-repeat="transaction in TransHomeCtl.transactions">
-         <transaction-short transaction="transaction"></transaction-short>
-      </tr>
-    </table>
-  </div> -->
-
   <div class="card-panel">
     <h2 class="panel-heading text-center panel-title panel-capitalizefirst">{{OrdHomeCtl.current_account.description}} ({{OrdHomeCtl.current_account.balance/100}})</h2>
     <table class="table table-hover table-condensed">
             <tr>
                 <th>Date</th>
+                <th>De</th>
+                <th>Pour</th>
                 <th>Type </th>
                 <th>Montant</th>
                 <th></th>
             </tr>
-            <tr ng-repeat="transaction in OrdHomeCtl.transactions | TransactionFilter:OrdHomeCtl.current_account.id | limitTo:20">
+            <tr ng-repeat="transaction in OrdHomeCtl.transactions | filter:OrdHomeCtl.current_account.short_name | orderBy:'-created' | limitTo:20">
                 <td>{{transaction.created}}</td>
+                <td>{{transaction.debited_account.short_name}}</td>
+                <td>{{transaction.credited_account.short_name}}</td>
                 <td>{{transaction.label}}</td>
                 <td>{{transaction.amount/100}}€</td>
                 <td>x</td>
             </tr>
-
 
       </table>
   </div>
