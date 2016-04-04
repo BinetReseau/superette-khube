@@ -1,18 +1,18 @@
 <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
       <div class="card-panel">
-        <div class="row">
+        <div class="row text-center">
           <form name="loginForm" ng-submit="LoginCtl.connexion(LoginCtl.credentials)">
             <alert ng-repeat="alert in LoginCtl.alerts" type="{{ alert.type }}" close="LoginCtl.closeAlert($index)">{{ alert.msg }}</alert>
-            <h5>CONNEXION</h5>
+            <h5>Connexion</h5>
             <br>
             <div class="input-field">
               <input type="text" class="validate" id="usernameInput" name="user" ng-model="LoginCtl.credentials.username">
-              <label for="usernameInput">User</label>
+              <label for="usernameInput">Nom d'utilisateur</label>
             </div>
             <div class="input-field">
               <input id="passwordInput" type="password" class="validate" name="password" ng-model="LoginCtl.credentials.password">
-              <label for="passwordInput">Password</label>
+              <label for="passwordInput">Mot de passe</label>
             </div>
             <div class="text-center">
               <button type="submit" class="btn btn-info waves-effect waves-light">Login</button>

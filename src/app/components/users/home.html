@@ -1,13 +1,7 @@
-<p>This should display some users</p>
-
-<button class="btn btn-info" ui-sref="index.users.add" >Ajouter une utilisateur</button>
-
-
-<input type="text" ng-model="query" />
-
-<ul>
-    <li ng-repeat="user in UseHomeCtl.users | filter: query">
-        <user-short user="user"></user-short>
-    </li>
-
-</ul>
+<div class="row col-xs-10 col-xs-offset-1">
+  <div class="card-panel">
+    <div class="row text-center">
+        <button class="btn btn-info" ui-sref="index.users.add" >Ajouter un utilisateur</button>
+    </div>
+  </div>
+</div>

@@ -2,9 +2,6 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">
-                <li class="active" ng-if="main.isLoggedIn()">
-                    Connecté en tant que {{main.user.username}}
-                </li>
                 <li class="active" ng-if="!main.isLoggedIn()">
                     <a ui-sref="index.login">Connexion</a>
                 </li>
@@ -12,19 +9,10 @@
                     <a href="" ng-click="main.logout()">Déconnexion</a>
                 </li>
                 <li class="active" ui-sref-active="active">
-                    <a ui-sref="index.transactions">Transactions</a>
+                    <a ui-sref="index.orders">Logger</a>
                 </li>
                 <li class="active" ui-sref-active="active">
-                    <a ui-sref="index.accounts">Accounts</a>
-                </li>
-                <li class="active" ui-sref-active="active">
-                    <a ui-sref="index.orders">Orders</a>
-                </li>
-                <li class="active" ui-sref-active="active">
-                    <a ui-sref="index.events">Events</a>
-                </li>
-                <li class="active" ui-sref-active="active">
-                    <a ui-sref="index.users">Users</a>
+                    <a ui-sref="index.users">Utilisateurs</a>
                 </li>
             </ul>
         </div>
