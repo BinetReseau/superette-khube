@@ -72,3 +72,9 @@ p.time {
 .panel{
   border-radius: 0px;
 }
+body{
+  font-size: 16px;
+}
+.white .text-center, .white p{
+  color: black;
+}
