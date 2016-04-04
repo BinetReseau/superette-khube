@@ -8,6 +8,16 @@
 
     /** @ngInject */
     function Account(DS) {
-        return DS.defineResource('account');
+        return DS.defineResource({
+            name: 'account',
+            relations: {
+                belongsTo: {
+                    user: {
+                        localField: 'user',
+                        localKey: '_owner'
+                    }
+                }
+            }
+        });
     }
 })();

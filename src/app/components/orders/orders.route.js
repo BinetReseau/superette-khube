@@ -23,8 +23,11 @@
                     accounts: function(Account) {
                         return Account.findAll();
                     },
-                    app_owner: function(User, OWNER_USERNAME) {
-                        return User.findAll({username : OWNER_USERNAME})
+                    app_account: function(Account, OWNER_USERNAME) {
+                        return Account.findAll({short_name : OWNER_USERNAME});
+                    },
+                    app_event: function(Event) {
+                        return Event.findAll();
                     }
                 }
             })
