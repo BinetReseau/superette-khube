@@ -23,6 +23,9 @@
                     accounts: function(Account) {
                         return Account.findAll();
                     },
+                    transactions: function(Transaction) {
+                        return Transaction.findAll();
+                    },
                     app_account: function(Account, OWNER_USERNAME) {
                         return Account.findAll({short_name : OWNER_USERNAME});
                     },

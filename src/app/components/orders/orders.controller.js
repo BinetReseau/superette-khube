@@ -4,15 +4,17 @@
     angular
         .module('platalbankKhube.orders')
         .controller('OrdersHomeController', OrdersHomeController)
+        .filter('TransactionFilter', TransactionFilter)
     ;
 
     /** @ngInject */
-    function OrdersHomeController(User, Account, Transaction, accounts, $log, $filter, app_account, app_event) {
+    function OrdersHomeController(User, Account, Transaction, transactions, accounts, $log, $filter, app_account, app_event) {
         var vm = this;
 
         vm.alerts = [];
 
         vm.accounts = accounts;
+        vm.transactions = transactions;
 
         vm.chosen = null;
         vm.current_account = null;
@@ -86,5 +88,18 @@
             }
         };
 
+    };
+
+    function TransactionFilter() {
+        return function(transactions, account_id) {
+        console.log("id" + account_id);
+        var filteredTransactions = [];
+        angular.forEach(transactions, function(transaction, key) {
+            if (transaction.credited_account.id == account_id || transaction.debited_account.id == account_id) {
+                filteredTransactions.push(transaction);
+            }
+        });
+        return filteredTransactions;
     }
+}
 })();
