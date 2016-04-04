@@ -26,7 +26,7 @@
                 function(user) {
                     vm.login = {username: '', password: ''};
                     vm.inLogin = false;
-                    console.log("User is connected");
+                    $state.go('index.orders.home');
                 }, function() {
                     vm.loginError = true;
                     vm.alerts.push({type: 'danger', msg: 'Échec de l\'authentification.'});

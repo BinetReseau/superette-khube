@@ -17,6 +17,7 @@
             'platalbankKhube.events',
             'platalbankKhube.users',
             'platalbankKhube.auth',
+            'platalbankKhube.orders',
         ])
     ;
 })();
