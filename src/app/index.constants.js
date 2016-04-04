@@ -4,5 +4,7 @@
 
     angular
     .module('platalbankKhube')
-    .constant('moment', moment);
+    .constant('moment', moment)
+    .constant('OWNER_USERNAME','superette')
+    ;
 })();

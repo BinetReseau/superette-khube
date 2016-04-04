@@ -11,6 +11,14 @@
     function User(DS) {
         return DS.defineResource({
             name: 'user',
+            relations: {
+                hasMany: {
+                    account: {
+                        localField: 'account',
+                        foreignKey: 'user_id'
+                    }
+                }
+            },
             actions: {
                 me: {
                     method: 'GET'
