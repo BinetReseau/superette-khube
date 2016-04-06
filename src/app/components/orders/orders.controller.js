@@ -3,12 +3,12 @@
 
     angular
         .module('platalbankKhube.orders')
-        .controller('OrdersHomeController', OrdersHomeController)
+        .controller('OrdersBaseController', OrdersBaseController)
         .controller('OrdersDetailController', OrdersDetailController)
     ;
 
     /** @ngInject */
-    function OrdersHomeController($state, User, Account, Transaction, transactions, accounts, $log, $filter, app_account, app_event) {
+    function OrdersBaseController($state, User, Account, Transaction, transactions, accounts, $log, $filter, app_account, app_event) {
         var vm = this;
 
         vm.alerts = [];

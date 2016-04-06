@@ -1,10 +1,10 @@
-<alert ng-repeat="alert in OrdHomeCtl.alerts" type="{{ alert.type }}" close="OrdHomeCtl.closeAlert($index)">{{ alert.msg }}</alert>
+<alert ng-repeat="alert in OrdBaseCtl.alerts" type="{{ alert.type }}" close="OrdBaseCtl.closeAlert($index)">{{ alert.msg }}</alert>
 <div class="row col-xs-10 col-xs-offset-1">
   <div class="card-panel">
     <div class="row">
       <input autofocus="autofocus" type="text" ng-model="query" placeholder="Nom ou montant"
-       uib-typeahead="'' as el for el in OrdHomeCtl.analyse($viewValue) | limitTo:7"
-       typeahead-on-select="OrdHomeCtl.submit($item)"
+       uib-typeahead="'' as el for el in OrdBaseCtl.analyse($viewValue) | limitTo:7"
+       typeahead-on-select="OrdBaseCtl.submit($item)"
        typeahead-template-url="app/components/orders/typeahead.html" />
     </div>
   </div>

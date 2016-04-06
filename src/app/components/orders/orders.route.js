@@ -12,13 +12,9 @@
         $stateProvider
             .state('index.orders', {
                 url: "orders",
-                templateUrl: "app/components/orders/base.html"
-            })
-            .state('index.orders.home', {
-                url: "/",
-                templateUrl: "app/components/orders/home.html",
-                controller: 'OrdersHomeController',
-                controllerAs: 'OrdHomeCtl',
+                templateUrl: "app/components/orders/base.html",
+                controller: 'OrdersBaseController',
+                controllerAs: 'OrdBaseCtl',
                 resolve: {
                     accounts: function(Account) {
                         return Account.findAll();
@@ -33,6 +29,11 @@
                         return Event.findAll();
                     },
                 }
+            })
+            .state('index.orders.home', {
+                url: "/",
+                templateUrl: "app/components/orders/home.html"
+                
             })
             .state('index.orders.details', {
                 url: "/:id",
