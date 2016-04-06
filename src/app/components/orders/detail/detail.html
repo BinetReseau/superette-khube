@@ -1,1 +1,12 @@
+<alert ng-repeat="alert in OrdDetailCtl.alerts" type="{{ alert.type }}" close="OrdDetailCtl.closeAlert($index)">{{ alert.msg }}</alert>
+<div class="row col-xs-10 col-xs-offset-1">
+  <div class="card-panel">
+    <div class="row">
+      <input autofocus="autofocus" type="text" ng-model="query" placeholder="Nom ou montant"
+       uib-typeahead="'' as el for el in OrdDetailCtl.analyse($viewValue) | limitTo:7"
+       typeahead-on-select="OrdDetailCtl.submit($item)"
+       typeahead-template-url="app/components/orders/typeahead.html" />
+    </div>
+  </div>
+</div>
 <order-detailed account="OrdDetailCtl.currentAccount" transactions="OrdDetailCtl.transactions"></order-detailed>
