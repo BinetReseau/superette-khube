@@ -8,12 +8,16 @@
     ;
 
     /** @ngInject */
-    function OrdersHomeController($state, accounts, $log, $filter) {
+    function OrdersHomeController($state, accounts, $log, $filter, $timeout) {
         var vm = this;
 
         vm.alerts = [];
         vm.accounts = accounts;
         vm.chosen = null;
+
+        $timeout(function () {
+            document.getElementById("magicBar").focus();
+        }, 300);
 
         vm.analyse = function(input) {
 
@@ -49,14 +53,16 @@
         };
     };
 
-    function OrdersDetailController($state, Transaction, transactions, accounts, current_account, $log, $filter, app_account, app_event) {
+    function OrdersDetailController($state, Transaction, transactions, accounts, current_account, $log, $filter, app_account, app_event, $timeout) {
         var vm = this;
 
+        $timeout(function () {
+            document.getElementById("detailMagicBar").focus();
+        }, 300);
         vm.alerts = [];
 
         vm.accounts = accounts;
         vm.transactions = transactions;
-
         vm.chosen = null;
         vm.currentAccount = current_account;
         vm.app_account = app_account[0];
