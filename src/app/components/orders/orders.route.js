@@ -12,7 +12,7 @@
         $stateProvider
             .state('index.orders', {
                 url: "orders",
-                template: "<ui-view></ui-view>"
+                templateUrl: "app/components/orders/base.html"
             })
             .state('index.orders.home', {
                 url: "/",
@@ -36,7 +36,7 @@
             })
             .state('index.orders.details', {
                 url: "/:id",
-                templateUrl: "app/components/orders/home.html",
+                templateUrl: "app/components/orders/detail/detail.html",
                 controller: 'OrdersDetailController',
                 controllerAs: 'OrdDetailCtl',
                 resolve: {
