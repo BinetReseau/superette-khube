@@ -11,7 +11,8 @@
         return {
             restrict: 'E',
             scope: {
-            
+                currentAccount: '=account',
+                transactions: '=transactions'
             },
             templateUrl: 'app/components/orders/detail/directive.html'
         };
