@@ -1,0 +1,18 @@
+<div class="row col-xs-6 col-xs-offset-3">
+  <div class="card-panel">
+    <h5>
+    	{{UseDetailCtl.user.username}}
+    </h5>
+    <div class="row">
+    	<dl class="dl-horizontal">
+	    	<dt>Nom</dt><dd>{{UseDetailCtl.user.last_name}}</dd>
+	    	<dt>Prénom</dt><dd>{{UseDetailCtl.user.first_name}}</dd>
+	    	<dt>Solde</dt><dd>{{UseDetailCtl.account.balance/100}}</dd>
+	    	<dt>Promo</dt><dd>{{UseDetailCtl.user.promo}}</dd>
+	    	<dt>Email</dt><dd>{{UseDetailCtl.user.email}}</dd>
+	    	<dt>Portable</dt><dd>{{UseDetailCtl.user.phone}}</dd>
+	    	<dt>Casert</dt><dd>{{UseDetailCtl.user.room}}</dd>
+		</dl>
+    </div>
+  </div>
+</div>

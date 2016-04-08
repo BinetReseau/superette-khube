@@ -31,6 +31,20 @@
                 controller: 'UserAddController',
                 controllerAs: 'UseAddCtl'
             })
+            .state('index.users.details', {
+                url: "/:id",
+                templateUrl: "app/components/users/detail/details.html",
+                controller: 'UserDetailController',
+                controllerAs: 'UseDetailCtl',
+                resolve: {
+                    user: function(User, $stateParams) {
+                        return User.find($stateParams.id);
+                        },
+                    account: function(Account, $stateParams) {
+                        return Account.findAll({owner:$stateParams.id}); 
+                    }
+                }
+            })
         ;
     }
 })();
