@@ -22,6 +22,9 @@
                 resolve: {
                     users: function(User) {
                         return User.findAll();
+                    },
+                    accounts: function(Account) {
+                        return Account.findAll();
                     }
                 }
             })
@@ -41,7 +44,7 @@
                         return User.find($stateParams.id);
                         },
                     account: function(Account, $stateParams) {
-                        return Account.findAll({owner:$stateParams.id}); 
+                        return Account.findAll({owner:$stateParams.id});
                     }
                 }
             })
