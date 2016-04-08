@@ -10,7 +10,7 @@
                 <th>Montant</th>
                 <th></th>
             </tr>
-            <tr ng-repeat="transaction in transactions | filter:currentAccount.short_name | orderBy:'-created' | limitTo:20">
+            <tr ng-repeat="transaction in transactions | orderBy:'-created' | limitTo:20">
                 <td>{{transaction.created | date}}</td>
                 <td>{{transaction.debited_account.short_name}}</td>
                 <td>{{transaction.credited_account.short_name}}</td>

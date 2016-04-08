@@ -37,8 +37,11 @@
                     current_account: function(Account, $stateParams) {
                         return Account.find($stateParams.id);
                     },
-                    transactions: function(Transaction, $stateParams) {
-                        return Transaction.findAll({state:"C"}, {debited_account:$stateParams.id}|{credited_account:$stateParams.id});
+                    transactions_debit: function(Transaction, $stateParams) {
+                        return Transaction.findAll({debited_account:$stateParams.id,state:'C'});
+                    },
+                    transactions_credit: function(Transaction, $stateParams) {
+                        return Transaction.findAll({credited_account:$stateParams.id,state:'C'});
                     },
                     app_account: function(Account, OWNER_USERNAME) {
                         return Account.findAll({short_name : OWNER_USERNAME});

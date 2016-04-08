@@ -53,7 +53,7 @@
         };
     };
 
-    function OrdersDetailController($state, Transaction, transactions, accounts, current_account, $log, $filter, app_account, app_event, $timeout) {
+    function OrdersDetailController($state, Transaction, transactions_debit, transactions_credit, accounts, current_account, $log, $filter, app_account, app_event, $timeout) {
         var vm = this;
 
         $timeout(function () {
@@ -62,7 +62,9 @@
         vm.alerts = [];
 
         vm.accounts = accounts;
-        vm.transactions = transactions;
+        vm.transactions_debit = transactions_debit;
+        vm.transactions_credit = transactions_credit;
+        vm.transactions = vm.transactions_credit.concat(vm.transactions_debit);
         vm.chosen = null;
         vm.currentAccount = current_account;
         vm.app_account = app_account[0];
@@ -130,6 +132,7 @@
                     return;
                 }
                 Transaction.create(transaction).then(function(transaction) {
+                    console.log(transaction);
                     vm.transactions.push(transaction);
                     vm.alerts.push({type: 'info', msg: "Transaction effectuée"});
                     $log.debug('Transaction ajoutée avec succès.');
