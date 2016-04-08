@@ -142,6 +142,13 @@
 
         vm.cancelTransaction = function(transaction) {
             console.log(transaction);
+            if (transaction.label == "debit") {
+                    vm.currentAccount.balance += transaction.amount;
+                } else if (transaction.label == "credit") {
+                    vm.currentAccount.balance -= transaction.amount;
+                } else {
+                    return;
+                }
             transaction.state = 'X';
             transaction.credited_account = transaction.credited_account.id;
             transaction.debited_account = transaction.debited_account.id;
