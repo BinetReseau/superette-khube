@@ -155,7 +155,8 @@
             transaction.state = 'X';
             transaction.credited_account = transaction.credited_account.id;
             transaction.debited_account = transaction.debited_account.id;
-            transaction.event = transaction.event.id; 
+            transaction.event = transaction.event.id;
+            vm.transactions.pop(transaction);
             Transaction.save(transaction);
         }
 
