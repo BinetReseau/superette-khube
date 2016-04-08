@@ -140,5 +140,14 @@
             }
         };
 
+        vm.cancelTransaction = function(transaction) {
+            console.log(transaction);
+            transaction.state = 'X';
+            transaction.credited_account = transaction.credited_account.id;
+            transaction.debited_account = transaction.debited_account.id;
+            transaction.event = transaction.event.id; 
+            Transaction.save(transaction);
+        }
+
     };
 })();

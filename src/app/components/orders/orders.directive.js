@@ -12,7 +12,8 @@
             restrict: 'E',
             scope: {
                 currentAccount: '=account',
-                transactions: '=transactions'
+                transactions: '=transactions',
+                cancelTransaction: '&'
             },
             templateUrl: 'app/components/orders/detail/directive.html'
         };
