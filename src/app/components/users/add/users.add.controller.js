@@ -62,6 +62,8 @@
                 vm.user.last_name = user.last_name;
                 vm.user.promo = user.promo;
                 vm.user.email = user.email;
+                vm.user.room = user.room;
+                vm.user.phone = user.phone;
             });
         };
     };
