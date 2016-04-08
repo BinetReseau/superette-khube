@@ -1,22 +1,24 @@
 <div class="row col-xs-offset-1 col-xs-10" >
   <div class="card-panel">
-    <h2 class="panel-heading text-center panel-title panel-capitalizefirst"> <a ui-sref="index.users.details({id: currentAccount.owner.id})">  {{currentAccount.description}} </a>({{currentAccount.balance/100 |currency}})</h2>
+    <h2 class="panel-heading text-center panel-title panel-capitalizefirst"> <a ui-sref="index.users.details({id: currentAccount.owner.id})">  {{currentAccount.description}} </a>
+        <span ng-if="currentAccount.balance<0" class="label label-danger">{{ currentAccount.balance/100 |currency}}</span>
+        <span ng-if="currentAccount.balance>=0" class="label label-success">{{currentAccount.balance/100 |currency}}</span>
+    </h2>
     <table class="table table-hover table-condensed">
             <tr>
                 <th>Date</th>
-                <th>De</th>
-                <th>Pour</th>
                 <th>Type </th>
                 <th>Montant</th>
                 <th></th>
             </tr>
             <tr ng-repeat="transaction in transactions | orderBy:'-created' | limitTo:20">
                 <td>{{transaction.created | date}}</td>
-                <td>{{transaction.debited_account.short_name}}</td>
-                <td>{{transaction.credited_account.short_name}}</td>
-                <td>{{transaction.label}}</td>
+                <td>
+                    <span ng-if="transaction.label=='debit'" class="label label-info">{{transaction.label}}</span>
+                    <span ng-if="transaction.label=='credit'" class="label label-success">{{transaction.label}}</span>
+                </td>
                 <td>{{transaction.amount/100 | currency }}</td>
-                <td><a class="btn btn-xs btn-warning waves-effect waves-light" ng-click="cancelTransaction()(transaction)">Annuler</a></td>
+                <td><a class="btn btn-xs btn-warning waves-effect waves-light pull-right" ng-click="cancelTransaction()(transaction)">Annuler</a></td>
             </tr>
 
       </table>
