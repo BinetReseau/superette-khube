@@ -153,10 +153,12 @@
                     return;
                 }
             transaction.state = 'X';
+            var index = vm.transactions.indexOf(transaction);
+            if (index != -1) 
+                vm.transactions.splice(index, 1);
             Transaction.cancel(transaction.id).then(function(){
                 vm.alerts.push({type: 'info', msg: "Transaction annulée"});
             });
-            vm.transactions.pop(transaction);
         }
 
     };
