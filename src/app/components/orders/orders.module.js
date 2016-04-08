@@ -2,6 +2,6 @@
     'use strict';
 
     angular
-        .module('platalbankKhube.orders', ['js-data', 'ui.bootstrap'])
+        .module('platalbankKhube.orders', ['ngStorage','js-data', 'ui.bootstrap'])
     ;
 })();

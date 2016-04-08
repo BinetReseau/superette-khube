@@ -2,36 +2,10 @@
 <div class="row col-xs-10 col-xs-offset-1">
   <div class="card-panel">
     <div class="row">
-      <input autofocus="autofocus" type="text" ng-model="query" placeholder="Nom ou montant"
+      <input id="magicBar" type="text" ng-model="query" placeholder="Nom ou montant"
        uib-typeahead="'' as el for el in OrdHomeCtl.analyse($viewValue) | limitTo:7"
        typeahead-on-select="OrdHomeCtl.submit($item)"
        typeahead-template-url="app/components/orders/typeahead.html" />
     </div>
   </div>
-</div>
-
-<div class="row col-xs-offset-1 col-xs-10" >
-  <div class="card-panel">
-    <h2 class="panel-heading text-center panel-title panel-capitalizefirst">{{OrdHomeCtl.current_account.description}} ({{OrdHomeCtl.current_account.balance/100}})</h2>
-    <table class="table table-hover table-condensed">
-            <tr>
-                <th>Date</th>
-                <th>De</th>
-                <th>Pour</th>
-                <th>Type </th>
-                <th>Montant</th>
-                <th></th>
-            </tr>
-            <tr ng-repeat="transaction in OrdHomeCtl.transactions | filter:OrdHomeCtl.current_account.short_name | orderBy:'-created' | limitTo:20">
-                <td>{{transaction.created}}</td>
-                <td>{{transaction.debited_account.short_name}}</td>
-                <td>{{transaction.credited_account.short_name}}</td>
-                <td>{{transaction.label}}</td>
-                <td>{{transaction.amount/100}}€</td>
-                <td>x</td>
-            </tr>
-
-      </table>
-  </div>
-
 </div>

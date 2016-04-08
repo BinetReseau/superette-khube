@@ -12,7 +12,7 @@
         $stateProvider
             .state('index.orders', {
                 url: "orders",
-                template: "<ui-view></ui-view>"
+                templateUrl: "app/components/orders/base.html"
             })
             .state('index.orders.home', {
                 url: "/",
@@ -23,8 +23,22 @@
                     accounts: function(Account) {
                         return Account.findAll();
                     },
-                    transactions: function(Transaction) {
-                        return Transaction.findAll();
+                }
+            })
+            .state('index.orders.details', {
+                url: "/:id",
+                templateUrl: "app/components/orders/detail/detail.html",
+                controller: 'OrdersDetailController',
+                controllerAs: 'OrdDetailCtl',
+                resolve: {
+                    accounts: function(Account) {
+                        return Account.findAll();
+                    },
+                    current_account: function(Account, $stateParams) {
+                        return Account.find($stateParams.id);
+                    },
+                    transactions: function(Transaction, $stateParams) {
+                        return Transaction.findAll({state:"C"}, {debited_account:$stateParams.id}|{credited_account:$stateParams.id});
                     },
                     app_account: function(Account, OWNER_USERNAME) {
                         return Account.findAll({short_name : OWNER_USERNAME});
