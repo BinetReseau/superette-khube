@@ -153,11 +153,10 @@
                     return;
                 }
             transaction.state = 'X';
-            transaction.credited_account = transaction.credited_account.id;
-            transaction.debited_account = transaction.debited_account.id;
-            transaction.event = transaction.event.id;
+            Transaction.cancel(transaction.id).then(function(){
+                vm.alerts.push({type: 'info', msg: "Transaction annulée"});
+            });
             vm.transactions.pop(transaction);
-            Transaction.save(transaction);
         }
 
     };

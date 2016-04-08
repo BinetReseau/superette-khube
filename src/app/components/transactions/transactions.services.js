@@ -8,6 +8,13 @@
 
     /** @ngInject */
     function Transaction(DS) {
-        return DS.defineResource('transaction');
+        return DS.defineResource({
+            name: 'transaction',
+            actions: {
+                cancel: {
+                    method: 'GET'
+                }
+            }
+        });
     }
 })();
