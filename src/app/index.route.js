@@ -7,7 +7,7 @@
 
     /** @ngInject */
     function routerConfig($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.otherwise('/login');
         $stateProvider
             .state('index', {
                 url: "/",
