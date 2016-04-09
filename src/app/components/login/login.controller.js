@@ -35,6 +35,12 @@
                 }
             );
         };
+        
+        vm.closeAlert = function(index) {
+            vm.alerts.splice(index, 1);
+        };
+
+
 
     }
 
