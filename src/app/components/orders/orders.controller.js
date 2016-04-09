@@ -20,21 +20,6 @@
         }, 300);
 
         vm.analyse = function(input) {
-
-            var amount = parseFloat(input);
-            if (!isNaN(amount)) {
-                var debit = {
-                    amount: amount,
-                    type: "debit",
-                    description: "Débiter " + amount.toString() + "€"
-                };
-                var credit = {
-                    amount: amount,
-                    type: "credit",
-                    description: "Créditer " + amount.toString() + "€"
-                };
-                return [debit, credit];
-            }
             return ($filter('filter')(accounts,input));
 
         }
@@ -118,6 +103,10 @@
 
         vm.doTransaction = function(o) {
             if (vm.currentAccount != null) {
+                if (vm.currentAccount == vm.app_account) {
+                    vm.alerts.push({type: 'danger', msg: "Transaction non autorisée"});
+                    return;
+                }
                 var transaction = Transaction.createInstance();
                 transaction.state = 'C';
                 transaction.amount = vm.amountToInteger(o.amount);
