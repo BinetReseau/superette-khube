@@ -16,7 +16,8 @@
     "ngstorage":"*",
     "lodash": "*",
     "bootstrap": "*",
-    "angular-bootstrap" : "*"
+    "angular-bootstrap" : "*",
+    "ngInfiniteScroll" : "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"

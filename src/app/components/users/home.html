@@ -8,14 +8,15 @@
 </div>
 
 <div class="row col-xs-offset-1 col-xs-10" >
-  <div class="card-panel">
+  <div class="card-panel" infinite-scroll="UseHomeCtl.loadMore()" infinite-scroll-distance="0">
     <h2 class="panel-heading text-center panel-title panel-capitalizefirst">Liste des utilisateurs<span ng-if="negative"> en négatif</span></h2>
     <table class="table table-hover table-condensed">
+        '{{UseHomeCtl.loadNb}}'
             <tr>
                 <th>Nom</th>
                 <th>Solde</th>
             </tr>
-            <tr ng-repeat="account in UseHomeCtl.accounts | orderBy:'balance' | limitTo:100">
+            <tr ng-repeat="account in UseHomeCtl.accounts | orderBy:'balance' | limitTo:UseHomeCtl.loadNb">
                 <td><a ui-sref="index.users.details({id: account.owner.id})">{{account.owner.first_name}} {{account.owner.last_name}}</a></td>
                 <td>{{account.balance/100}}€</td>
             </tr>
