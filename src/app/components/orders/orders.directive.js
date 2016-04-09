@@ -13,7 +13,9 @@
             scope: {
                 currentAccount: '=account',
                 transactions: '=transactions',
-                cancelTransaction: '&'
+                cancelTransaction: '&',
+                loadMore: '&',
+                loadNb: '=loadnb'
             },
             templateUrl: 'app/components/orders/detail/directive.html'
         };

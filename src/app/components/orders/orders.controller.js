@@ -21,7 +21,6 @@
 
         vm.analyse = function(input) {
             return ($filter('filter')(accounts,input));
-
         }
 
         vm.submit = function(chosen) {
@@ -50,6 +49,7 @@
             document.getElementById("detailMagicBar").focus();
         }, 300);
         vm.alerts = [];
+        vm.loadNb = 40;
 
         vm.accounts = accounts;
         vm.transactions_debit = transactions_debit;
@@ -148,7 +148,7 @@
                 }
             transaction.state = 'X';
             var index = vm.transactions.indexOf(transaction);
-            if (index != -1) 
+            if (index != -1)
                 vm.transactions.splice(index, 1);
             Transaction.cancel(transaction.id).then(function(){
                 vm.alerts.push({type: 'info', msg: "Transaction annulée"});
@@ -157,6 +157,10 @@
 
         vm.closeAlert = function(index) {
             vm.alerts.splice(index, 1);
+        };
+
+        vm.loadMore = function () {
+            vm.loadNb += 20;
         };
 
     };
