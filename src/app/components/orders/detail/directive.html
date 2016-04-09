@@ -1,5 +1,5 @@
 <div class="row col-xs-offset-1 col-xs-10" >
-  <div class="card-panel">
+  <div class="card-panel" infinite-scroll="loadMore()()" infinite-scroll-disabled='busyLoadingData' infinite-scroll-distance="0">
     <h2 class="panel-heading text-center panel-title panel-capitalizefirst"> <a ui-sref="index.users.details({id: currentAccount.owner.id})">  {{currentAccount.description}} </a>
         <span ng-if="currentAccount.balance<0" class="label label-danger">{{ currentAccount.balance/100 |currency}}</span>
         <span ng-if="currentAccount.balance>=0" class="label label-success">{{currentAccount.balance/100 |currency}}</span>
@@ -11,7 +11,7 @@
                 <th>Montant</th>
                 <th></th>
             </tr>
-            <tr ng-repeat="transaction in transactions | orderBy:'-created' | limitTo:20">
+            <tr ng-repeat="transaction in transactions | orderBy:'-created' | limitTo:loadNb">
                 <td>{{transaction.created | date}}</td>
                 <td>
                     <span ng-if="transaction.label=='debit'" class="label label-info">{{transaction.label}}</span>

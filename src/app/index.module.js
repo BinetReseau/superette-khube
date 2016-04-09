@@ -10,6 +10,7 @@
             'js-data',
             'ui.router',
             'ui.bootstrap',
+            'infinite-scroll',
 
             'platalbankKhube.home',
             'platalbankKhube.transactions',
