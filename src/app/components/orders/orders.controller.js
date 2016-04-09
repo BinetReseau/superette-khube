@@ -118,6 +118,10 @@
 
         vm.doTransaction = function(o) {
             if (vm.currentAccount != null) {
+                if (vm.currentAccount == vm.app_account) {
+                    vm.alerts.push({type: 'danger', msg: "Transaction non autorisée"});
+                    return;
+                }
                 var transaction = Transaction.createInstance();
                 transaction.state = 'C';
                 transaction.amount = vm.amountToInteger(o.amount);
