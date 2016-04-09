@@ -51,6 +51,11 @@
         vm.changeAccount = function(account) {
             $state.go("index.orders.details", {id:account.id});
         };
+
+        vm.closeAlert = function(index) {
+            vm.alerts.splice(index, 1);
+        };
+
     };
 
     function OrdersDetailController($state, Transaction, transactions_debit, transactions_credit, accounts, current_account, $log, $filter, app_account, app_event, $timeout) {
@@ -160,6 +165,10 @@
                 vm.alerts.push({type: 'info', msg: "Transaction annulée"});
             });
         }
+
+        vm.closeAlert = function(index) {
+            vm.alerts.splice(index, 1);
+        };
 
     };
 })();

@@ -3,7 +3,7 @@
       <div class="card-panel">
         <div class="row text-center">
           <form name="loginForm" ng-submit="LoginCtl.connexion(LoginCtl.credentials)">
-            <alert ng-repeat="alert in LoginCtl.alerts" type="{{ alert.type }}" close="LoginCtl.closeAlert($index)">{{ alert.msg }}</alert>
+            <uib-alert ng-repeat="alert in LoginCtl.alerts" type="{{ alert.type }}" close="LoginCtl.closeAlert($index)">{{ alert.msg }}</uib-alert>
             <h5>Connexion</h5>
             <br>
             <div class="input-field">
