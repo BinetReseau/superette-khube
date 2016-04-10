@@ -2210,7 +2210,7 @@ Colors
 }
 
 .default-color {
-  background-color: #2BBBAD !important;
+  background-color: #7f6662 !important;
 }
 
 .default-color-dark {
@@ -3341,7 +3341,7 @@ button.btn-floating {
 }
 
 .btn-danger {
-  background: #CC0000;
+  background: #c52a33;
 }
 
 .btn-danger:hover, .btn-danger:focus {
@@ -3399,7 +3399,7 @@ button.btn-floating {
   position: relative;
   height: 60px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.84);
+  color: #7f6662;
 }
 
 .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
@@ -3639,7 +3639,8 @@ a {
 
 html {
   line-height: 1.5;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto",
+ sans-serif;
   font-weight: normal;
   color: rgba(0, 0, 0, 0.87);
 }

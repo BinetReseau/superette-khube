@@ -1,5 +1,5 @@
 body {
-    background: #ff3b4e;
+    background: #c52a33;
     margin: 0;
     padding: 0;
 }
@@ -72,6 +72,20 @@ p.time {
 .dropdown-menu {
     width: 100%;
 }
-.btn{
+tr .btn{
  margin: 0px;
 }
+header{
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+header .img-responsive{
+  height: 180px;
+}
+header .thumbnail{
+  padding: 0px;
+  margin-bottom: 0px;
+  background-color: #c8e5e5;
+}
+
+
