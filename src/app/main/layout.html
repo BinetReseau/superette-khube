@@ -1,3 +1,8 @@
+<header>
+    <div class="thumbnail">
+      <img class= "img-responsive" ng-src="app/img/logo-superette.png"/>
+    </div>
+</header>
 <nav class="navbar default-color">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
@@ -8,10 +13,10 @@
                 <li  ng-if="main.isLoggedIn()">
                     <a href="" ng-click="main.logout()">Déconnexion</a>
                 </li>
-                <li class="active" ng-if="main.isLoggedIn()" ui-sref-active="active">
+                <li class="active" ui-sref-active="active">
                     <a ui-sref="index.orders">Logger</a>
                 </li>
-                <li class="active" ng-if="main.isLoggedIn()" ui-sref-active="active">
+                <li class="active" ui-sref-active="active">
                     <a ui-sref="index.users">Utilisateurs</a>
                 </li>
             </ul>
