@@ -40,3 +40,10 @@ gulp.task('useref', function(){
     .pipe(gulp.dest('dist'))
 });
 
+gulp.task('styles', function(){
+  return gulp.src('src/assets/css/style.css', {style: 'expanded'})
+    .pipe(gulp.dest('dist/assets/css'))
+    .pipe(cssnano())
+    .pipe(gulp.dest('dist/assets/css'))
+});
+
