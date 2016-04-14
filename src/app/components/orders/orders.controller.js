@@ -63,7 +63,7 @@
 
         vm.analyse = function(input) {
 
-            var amount = parseFloat(input);
+            var amount = parseFloat(input.replace(",","."));
             if (!isNaN(amount)) {
                 var debit = {
                     amount: amount,
