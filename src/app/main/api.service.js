@@ -18,7 +18,7 @@
                 if (/localhost/.test($location.absUrl())) {
                     return 'http://127.0.0.1:8000' + path;
                 } else {
-                    return 'http://' + path;
+                    return 'http://api.superette.binets.fr' + path;
                 }
             }
         };

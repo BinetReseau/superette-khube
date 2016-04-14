@@ -27,7 +27,8 @@
                     // console.log(final);
                     return final;
             },
-            basePath: 'http://127.0.0.1:8000/api',
+            // basePath: 'http://127.0.0.1:8000/api',
+            basePath: 'http://api.superette.binets.fr/api',
             forceTrailingSlash: true
         });
     }
