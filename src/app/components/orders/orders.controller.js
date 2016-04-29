@@ -82,10 +82,8 @@
         }
 
         vm.submit = function(chosen) {
-            console.log("123");
             vm.chosen = chosen;
             if (chosen.type) {
-                console.log("coucou");
                 vm.doTransaction(chosen);
             } else {
                 vm.changeAccount(chosen);
