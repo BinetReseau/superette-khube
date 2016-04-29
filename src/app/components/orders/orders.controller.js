@@ -96,7 +96,8 @@
         };
 
         vm.amountToInteger = function(amount) {
-            return Math.floor(amount * 100);
+             //+0.1 before flooring, otherwise, there might be strange behaviors
+            return Math.floor(amount * 100 + 0.1);
         }
 
         vm.doTransaction = function(o) {
