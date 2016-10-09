@@ -82,10 +82,8 @@
         }
 
         vm.submit = function(chosen) {
-            console.log("123");
             vm.chosen = chosen;
             if (chosen.type) {
-                console.log("coucou");
                 vm.doTransaction(chosen);
             } else {
                 vm.changeAccount(chosen);
@@ -98,7 +96,8 @@
         };
 
         vm.amountToInteger = function(amount) {
-            return Math.floor(amount * 100);
+             //+0.1 before flooring, otherwise, there might be strange behaviors
+            return Math.floor(amount * 100 + 0.1);
         }
 
         vm.doTransaction = function(o) {
