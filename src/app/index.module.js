@@ -19,6 +19,7 @@
             'platalbankKhube.users',
             'platalbankKhube.auth',
             'platalbankKhube.orders',
+            'platalbankKhube.myAccount',
         ])
     ;
 })();

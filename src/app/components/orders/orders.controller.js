@@ -54,6 +54,7 @@
         vm.accounts = accounts;
         vm.transactions_debit = transactions_debit;
         vm.transactions_credit = transactions_credit;
+        console.log(vm.transactions_debit);
         vm.transactions = vm.transactions_credit.concat(vm.transactions_debit);
         vm.chosen = null;
         vm.currentAccount = current_account;
