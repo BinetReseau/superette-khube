@@ -20,9 +20,19 @@
                 controller: 'MyAccountHomeController',
                 controllerAs: 'MyAccHomeCtl',
                 resolve: {
-                    account: function(Account,AuthService) {
+                    account: function (Account,AuthService) {
                         return Account.find(AuthService.getUser().id);
-                    }
+                    },
+                    transactions_debit: function (Account, Transaction, AuthService) {
+                        return Account.find(AuthService.getUser().id).then(function (value) {
+                            return Transaction.findAll({debited_account:value.id});
+                        });
+                    },
+                    transactions_credit: function (Account, Transaction, AuthService) {
+                        return Account.find(AuthService.getUser().id).then(function (value) {
+                            return Transaction.findAll({credited_account:value.id});
+                        });
+                    },
                 }
             })
     }

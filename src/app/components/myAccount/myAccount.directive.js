@@ -12,7 +12,7 @@
             restrict: 'E',
             scope: {
                 currentAccount: '=account',
-                // transactions: '=transactions',
+                transactions: '=transactions',
                 // cancelTransaction: '&',
                 // loadMore: '&',
                 // loadNb: '=loadnb'
