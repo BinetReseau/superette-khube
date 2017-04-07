@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-xs-12">
         <input autofocus="autofocus" autocomplete="off" type="text" class="form-control"
-        id="frankiz_query" ng-model="UseImpCtl.query" placeholder="prenom.nom"
-        uib-typeahead="user.first_name + ' ' + user.last_name for user in UseImpCtl.frankiz_users | filter:$viewValue | limitTo:7"
+        id="ldap_query" ng-model="UseImpCtl.query" placeholder="prenom.nom"
+        uib-typeahead="user.firstname + ' ' + user.lastname + ' - ' + user.mail + ' (' +  user.promo + ')' for user in UseImpCtl.fetchLdap($viewValue) | orderBy: '-promo'"
         typeahead-on-select="UseImpCtl.select($item)"/>
     </div>
 </div>

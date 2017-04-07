@@ -57,11 +57,11 @@
                 }
             });
             modalInstance.result.then(function (user) {
-                vm.user.username = user.hruid;
-                vm.user.first_name = user.first_name;
-                vm.user.last_name = user.last_name;
+                vm.user.username = user.uid;
+                vm.user.first_name = user.firstname;
+                vm.user.last_name = user.lastname;
                 vm.user.promo = user.promo;
-                vm.user.email = user.email;
+                vm.user.email = user.mail;
                 vm.user.room = user.room;
                 vm.user.phone = user.phone;
             });
