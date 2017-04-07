@@ -13,9 +13,14 @@
         vm.loadNb = 40;
         vm.users = users;
         vm.accounts = accounts;
+        vm.showZero = false;
 
         vm.loadMore = function() {
             vm.loadNb += 20;
+        };
+
+        vm.balanceIsNotZero = function(value) {
+            return vm.showZero || value.balance != 0;
         };
 
         vm.openNegative = function() {
