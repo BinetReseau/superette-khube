@@ -15,7 +15,7 @@
 
         vm.fetchLdap = function(query) {
             console.log("Making query")
-            return $http.get('http://autocomplete.binets.fr/ldap_search', {
+            return $http.get('https://autocomplete.binets.fr/ldap_search', {
               params: {
                 q: query,
               }
